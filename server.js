@@ -26,7 +26,7 @@ server.on('request', (request, response) => {
     let newMessage = { 'id': new Date() };
 
     request.on('data', (data) => {
-      let messageData = JSON.parse(JSON.parse(data.toString()));
+      let messageData = JSON.parse(data);
       console.log('29', messageData);
       console.log(typeof messageData);
       newMessage = Object.assign(newMessage, messageData);
